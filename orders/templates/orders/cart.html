@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your Cart</h1>
+
+{% if books %}
+<table>
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in books %}
+        <tr>
+            <td>{{ item.book.title }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.book.price }}</td>
+            <td>${{ item.subtotal }}</td>
+            <td>
+                <a href="{% url 'remove_from_cart' item.book.id %}" class="btn btn-danger">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3>Total Price: ${{ total_price }}</h3>
+<a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+{% else %}
+<p>Your cart is empty. <a href="{% url 'book_list' %}">Continue shopping</a>.</p>
+{% endif %}
+
+{% endblock %}
