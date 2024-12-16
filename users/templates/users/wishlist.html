@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wishlist</title>
+</head>
+<body>
+    <h1>Your Wishlist</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a> 
+                by 
+                {% for author in book.authors.all %}
+                    {{ author.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </li>
+        {% empty %}
+            <li>No books in your wishlist.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
