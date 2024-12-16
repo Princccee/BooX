@@ -24,3 +24,7 @@ def search_books(request):
     query = request.GET.get('q', '')
     books = Book.objects.filter(title__icontains=query) | Book.objects.filter(authors__name__icontains=query) | Book.objects.filter(genres__name__icontains=query)
     return render(request, 'books/book_list.html', {'books': books, 'query': query})
+
+
+def home_view(request):
+    return render(request, 'books/home.html') 
