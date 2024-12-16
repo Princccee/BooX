@@ -40,6 +40,12 @@ INSTALLED_APPS = [
 
     # Custom apps:
     'books',
+    'audiobooks',
+    'users',
+    'notifications',
+    'orders',
+    'reviews',
+    'subscription',
 ]
 
 MIDDLEWARE = [
