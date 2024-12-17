@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Subscribe{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Subscribe to a Plan</h1>
+<form method="POST" class="card p-4 shadow">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+    <a href="{% url 'subscription_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

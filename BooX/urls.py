@@ -23,4 +23,5 @@ urlpatterns = [
     path('books/', include('books.urls'), name='book'), # path to home app
     path('users/', include('users.urls'), name='users'), # path to users app
     path('orders/', include('orders.urls'), name='orders'), # path to orders app
+    path('subscriptions/', include('subscription.urls'), name='subscriptions'), # path to subscription app
 ]
