@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: #66a267;
+}
+
+.nav-links li a i {
+    font-size: 0.8rem;
+    margin-left: 4px;
+}
+
+/* Navbar Icons */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 30px 5px 10px;
+    outline: none;
+    font-size: 0.9rem;
+    width: 150px;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+}
+
+/* Cart Icon */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon i {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #66a267;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Profile Icon */
+.profile-icon i {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .navbar-icons {
+        gap: 10px;
+    }
+
+    .search-box input {
+        width: 100px;
+    }
+}

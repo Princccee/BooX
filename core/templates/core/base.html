@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-img">
+                <span class="logo-text">BooX</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Categories <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Shop <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Pages <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Search and Icons -->
+            <div class="navbar-icons">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." />
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-counter">0</span>
+                </div>
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
