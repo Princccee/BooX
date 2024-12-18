@@ -61,13 +61,14 @@ def profile(request):
     return render(request, 'users/profile.html', {'form': form, 'profile': profile})
 
 
-# Wishlist
+
 @login_required
 def wishlist(request):
-    """
-    Displays the books added to the user's wishlist.
-    """
-    books = request.user.profile.wishlist.all()  # Access wishlist from the Profile model
+    try:
+        wishlist = Wishlist.objects.get(user=request.user)  # Get the wishlist for the logged-in user
+        books = wishlist.books.all()  # Get the books in the user's wishlist
+    except Wishlist.DoesNotExist:
+        books = []  # If no wishlist exists, return an empty list
     return render(request, 'users/wishlist.html', {'books': books})
 
 
