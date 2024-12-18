@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ audiobook.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ audiobook.title }}</h2>
+<p><strong>Author:</strong> {{ audiobook.author }}</p>
+<p><strong>Narrator:</strong> {{ audiobook.narrator }}</p>
+<p><strong>Duration:</strong> {{ audiobook.duration }}</p>
+<p><strong>Description:</strong></p>
+<p>{{ audiobook.description }}</p>
+<p><strong>Uploaded At:</strong> {{ audiobook.uploaded_at }}</p>
+<a href="{% url 'audiobooks:list' %}">Back to all audiobooks</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Audiobook{% endblock %}
+
+{% block content %}
+<h2>Add a New Audiobook</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Audiobook</button>
+</form>
+<a href="{% url 'audiobooks:list' %}">Back to all audiobooks</a>
+{% endblock %}
