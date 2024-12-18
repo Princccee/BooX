@@ -22,6 +22,6 @@ def add_to_wishlist(request, pk):
 
 def search_books(request):
     query = request.GET.get('q', '')
-    books = Book.objects.filter(title__icontains=query) | Book.objects.filter(authors__name__icontains=query) | Book.objects.filter(genres__name__icontains=query)
+    books = Book.objects.filter(title__icontains=query) | Book.objects.filter(authors__name__icontains=query) | Book.objects.filter(genre__name__icontains=query)
     return render(request, 'books/book_list.html', {'books': books, 'query': query})
 
