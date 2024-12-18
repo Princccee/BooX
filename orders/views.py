@@ -118,7 +118,7 @@ def order_history(request):
     """
     Displays the user's past orders.
     """
-    orders = Order.objects.filter(user=request.user).order_by('-order_date')
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
     return render(request, 'orders/order_history.html', {'orders': orders})
 
 
